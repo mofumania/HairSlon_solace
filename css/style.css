@@ -1,0 +1,922 @@
+﻿@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #333;
+  line-height: 1.5;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#wrap {
+  max-width: 599px;
+  margin: 0 auto;
+}
+
+.txt_off {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ▼ headerここから ▼ */
+header {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+}
+
+h1 a {
+  display: block;
+  width: 136px;
+  height: 60px;
+  background-image: url(../img/logo_bk.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+/* ▼ #hamburger_menuここから ▼ */
+#menu_btn_check {
+  display: none;
+}
+
+.menu_btn {
+  position: fixed;
+  top: 0px;
+  right: 5px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+}
+
+.menu_btn span,
+.menu_btn span:before,
+.menu_btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #6c8650;
+  position: absolute;
+}
+
+.menu_btn span:before {
+  bottom: 8px;
+}
+.menu_btn span:after {
+  top: 8px;
+}
+
+#menu_btn_check:checked ~ .menu_btn span {
+  background-color: rgba(108, 134, 80, 0);
+}
+#menu_btn_check:checked ~ .menu_btn span::before {
+  background-color: #fff;
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu_btn_check:checked ~ .menu_btn span::after {
+  background-color: #fff;
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+#hamburger_menu nav {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 100;
+  transition: all 0.5s;
+  background-color: #a87570;
+	font-family: "Secular One", sans-serif;
+  font-size: 32px;
+  text-align: center;
+}
+
+#hamburger_menu ul {
+  padding: 70px 10px;
+}
+
+#hamburger_menu li {
+  padding-bottom: 20px;
+}
+
+#hamburger_menu li a {
+  color: #fff;
+}
+
+#menu_btn_check:checked ~ nav {
+  left: 0;
+}
+/* ▲ #hamburger_menuここまで ▲ */
+#nav_pc {
+  display: none;
+}
+/* ▲ headerここまで ▲ */
+
+#main_img_pc {
+  display: none;
+}
+
+/* ▼ #mainここから ▼ */
+#main_img {
+  width: 100%;
+  height: auto;
+}
+
+.contents {
+  width: 100%;
+  margin: 250px auto;
+}
+
+h2 {
+	font-family: "Secular One", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #6c8650;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.txt {
+  font-size: 14px;
+  line-height: 2.5;
+  margin-bottom: 50px;
+}
+
+/* ▼ #conceptここから ▼ */
+#concept {
+  text-align: center;
+}
+
+#solace,
+.hover_txt {
+  border-bottom: 1.5px dashed #a87570;
+  letter-spacing: 0.2em;
+}
+
+#concept .txt a .hover_txt {
+  display: none;
+}
+
+#concept .txt a:hover #solace {
+  display: none;
+}
+
+#concept .txt a:hover .hover_txt {
+  display: inline;
+}
+
+#concept .highlight {
+  padding: 2px 4px;
+  background-color: rgba(168, 117, 112, 0.4);
+}
+
+#concept .concept_img {
+  height: 200px;
+  margin: 0px 10px;
+  background-image: url(../img/concept.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/* ▲ #conceptここまで ▲ */
+
+/* ▼ #infoここから ▼ */
+#info {
+  text-align: center;
+}
+
+/* ▼ ボタンのデザイン ▼ */
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 240px;
+  padding: 20px 0px;
+  color: #333;
+	font-family: "Secular One", sans-serif;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+  background: #eae4de;
+  border-radius: 50px;
+  box-shadow: 0.2rem 0.2rem 0px 0.1rem #a87570;
+}
+
+.btn:hover {
+  transform: translate3d(0.2rem, 0.2rem, 0);
+  box-shadow: none;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.btn::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #333;
+  border-right: 3px solid #333;
+  transform: rotate(45deg) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  border-radius: 1px;
+  transition: 0.3s ease-in-out;
+}
+/* ▲ ボタンのデザイン ▲ */
+#info .staff_img {
+  height: 168px;
+  margin: 0px 10px;
+  background-image: url(../img/staff.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+}
+/* ▲ #infoここまで ▲ */
+
+/* ▼ #menuここから ▼ */
+#menu .item_box {
+  width: 300px;
+  height: 278px;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  text-align: left;
+  padding: 50px 20px 20px 20px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* ▼マステのデザイン▼ */
+.maste {
+  position: absolute;
+  top: -1em;
+  left: 30%;
+  width: 60px;
+  height: 30px;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(108, 134, 80, 0.4) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(108, 134, 80, 0.4) 50%,
+    rgba(108, 134, 80, 0.4) 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 20px 20px;
+  border-left: 2px dotted rgba(0, 0, 0, 0.1);
+  border-right: 2px dotted rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 0.25em 2em;
+  transform: rotate(-4deg);
+}
+/* ▲マステのデザイン▲ */
+
+#menu h3 {
+  font-size: 20px;
+}
+
+#menu .blank {
+  margin-bottom: 30px;
+}
+
+#menu .item_en {
+  padding: 5px 0px;
+}
+
+#menu .item_txt {
+  height: 140px;
+  padding: 8px 0px 10px 0px;
+}
+
+#menu .item_txt span {
+  font-size: 14px;
+}
+
+#menu .price {
+  padding-top: 14px;
+}
+/* ▲ #menuここまで ▲ */
+
+/* ▼ #newsここから ▼ */
+#news ul {
+  width: 300px;
+  font-size: 14px;
+  margin: 0 auto 40px auto;
+}
+
+#news dl {
+  text-align: left;
+}
+
+#news dd {
+  text-indent: 1em;
+  padding: 4px 0px;
+  border-bottom: 1px dashed #a87570;
+  margin-bottom: 10px;
+}
+
+#news dd a {
+  display: block;
+  width: 100%;
+  padding: 4px 0px;
+}
+
+#news .btn {
+  margin-bottom: 40px;
+}
+
+#news .news_img {
+  height: 200px;
+  margin: 0px 10px;
+  background-image: url(../img/news.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/* ▲ #newsここまで ▲ */
+
+/* ▼ #contactここから ▼ */
+#contact {
+  margin-bottom: 125px;
+}
+
+#contact .contact_txt {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#contact .contact_inner {
+  width: auto;
+  background-color: #eae4de;
+  padding: 30px 10px 50px 10px;
+  border-radius: 10px;
+  margin: 0 10px;
+  text-align: left;
+}
+
+#contact .form_area {
+  width: auto;
+  background-color: #fff;
+  padding: 40px 12px;
+  position: relative;
+}
+
+#contact .maste {
+  left: 30%;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(168, 117, 112, 0.4) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(168, 117, 112, 0.4) 50%,
+    rgba(168, 117, 112, 0.4) 75%,
+    transparent 75%,
+    transparent 100%
+  );
+}
+
+#contact dt .required::after {
+  content: "必須";
+  font-size: 12px;
+  color: #eb4f32;
+  margin-left: 1em;
+}
+
+#contact dd {
+  padding-bottom: 24px;
+}
+
+#contact input {
+  width: 70%;
+}
+
+#contact .inquiry_type {
+  padding-bottom: 10px;
+}
+
+#contact .radio-btn input {
+  width: auto;
+}
+
+#contact dd .message {
+  width: 100%;
+  height: 180px;
+}
+
+#contact .submit_txt {
+  text-align: left;
+  font-size: 14px;
+  padding-bottom: 40px;
+}
+
+.submit_btn {
+  border: none;
+  padding: 25px 80px;
+}
+/* ▲ #contactここまで ▲ */
+
+/* ▼ footerここから ▼ */
+footer {
+  background-color: #a87570;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+#footer_logo {
+  width: auto;
+  height: 80px;
+  text-align: center;
+  background-image: url(../img/logo_wh.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
+
+footer .tel {
+  font-size: 26px;
+  padding: 6px 0px;
+}
+
+footer .footer_inner p {
+  padding: 2px 0px;
+  letter-spacing: 0.1em;
+}
+
+footer #icon {
+  display: flex;
+  width: 185px;
+  margin: 10px auto;
+}
+
+footer #icon li {
+  width: 55px;
+  font-size: 30px;
+}
+
+footer #icon li:nth-child(2) {
+  margin: 0px 10px;
+}
+
+footer #icon li a {
+  display: block;
+  width: auto;
+}
+/* ▲ footerここまで ▲ */
+/* ▲ #mainここまで ▲ */
+
+@media screen and (min-width: 600px) {
+  #wrap {
+    max-width: 1024px;
+  }
+  /* ▼ headerここから ▼ */
+  header {
+    height: 80px;
+  }
+
+  h1 a {
+    width: 180px;
+  }
+
+  /* ▼ #hamburger_menuここから ▼ */
+  #menu_btn_check {
+    display: none;
+  }
+
+  .menu_btn {
+    height: 80px;
+    width: 80px;
+  }
+
+  .menu_btn span,
+  .menu_btn span:before,
+  .menu_btn span:after {
+    height: 4px;
+    width: 32px;
+    border-radius: 4px;
+  }
+
+  .menu_btn span:before {
+    bottom: 10px;
+  }
+  .menu_btn span:after {
+    top: 10px;
+  }
+
+  #hamburger_menu nav {
+    font-size: 38px;
+  }
+
+  #hamburger_menu li {
+    padding-bottom: 40px;
+  }
+  /* ▲ #hamburger_menuここまで ▲ */
+  /* ▲ headerここまで ▲ */
+
+  /* ▼ #mainここから ▼ */
+  .contents {
+    margin: 400px auto;
+  }
+  h2 {
+    font-size: 36px;
+    padding-bottom: 110px;
+  }
+
+  h2::after {
+    width: 48px;
+    height: 4px;
+  }
+
+  .txt {
+    font-size: 18px;
+    margin-bottom: 110px;
+  }
+
+  .smp_only {
+    display: none;
+  }
+  /* ▼ #conceptここから ▼ */
+
+  #concept .concept_img {
+    height: 300px;
+  }
+  /* ▲ #conceptここまで ▲ */
+
+  /* ▼ #infoここから ▼ */
+  /* ▼ ボタンのデザイン ▼ */
+  .btn {
+    font-size: 20px;
+  }
+  /* ▲ ボタンのデザイン ▲ */
+  #info .staff_img {
+    height: 286px;
+    margin: 40px 10px 0px 10px;
+  }
+  /* ▲ #infoここまで ▲ */
+
+  /* ▼ #menuここから ▼ */
+  #menu .item_box {
+    width: 450px;
+    height: 330px;
+    font-size: 18px;
+  }
+
+  /* ▼マステのデザイン▼ */
+  .maste {
+    left: 35%;
+  }
+
+  #menu h3 {
+    font-size: 26px;
+  }
+
+  #menu .blank {
+    margin-bottom: 36px;
+  }
+
+  #menu .item_en {
+    padding: 10px 0px;
+  }
+
+  #menu .item_txt span {
+    font-size: 16px;
+  }
+
+  #menu .price {
+    padding-top: 16px;
+  }
+
+  #menu .btn {
+    margin-top: 110px;
+  }
+  /* ▲ #menuここまで ▲ */
+
+  /* ▼ #newsここから ▼ */
+  #news ul {
+    width: 550px;
+    font-size: 18px;
+    margin: 0 auto 50px auto;
+  }
+
+  #news .news_img {
+    height: 360px;
+  }
+  /* ▲ #newsここまで ▲ */
+
+  /* ▼ #contactここから ▼ */
+  #contact {
+    font-size: 18px;
+    margin-bottom: 125px;
+  }
+
+  #contact .contact_txt {
+    padding-bottom: 40px;
+  }
+
+  #contact .contact_inner {
+    padding: 50px 26px 70px 26px;
+  }
+
+  #contact .form_area {
+    width: auto;
+    background-color: #fff;
+    padding: 40px 12px;
+    position: relative;
+  }
+
+  #contact .maste {
+    left: 40%;
+  }
+
+  #contact dt .required::after {
+    font-size: 14px;
+  }
+
+  #contact .submit_txt {
+    font-size: 18px;
+  }
+
+  .submit_btn {
+    border: none;
+    padding: 25px 80px;
+  }
+  /* ▲ #contactここまで ▲ */
+  /* ▲ #mainここまで ▲ */
+}
+
+@media screen and (min-width: 1025px) {
+  #wrap {
+    max-width: 1200px;
+  }
+  /* ▼ top_bgここから ▼ */
+  #top_bg {
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      #eae4de 0%,
+      #eae4de 35%,
+      #fff 35%,
+      #fff 100%
+    );
+    height: 720px;
+    position: relative;
+  }
+
+  .contents {
+    padding-top: 120px;
+  }
+  /* ▼ headerここから ▼ */
+  header {
+    width: 1200px;
+    height: 80px;
+    position: fixed;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+  }
+
+  h1 a {
+    display: block;
+    width: 180px;
+    height: 80px;
+    background-image: url(../img/logo_bk.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+  }
+  #hamburger_menu {
+    display: none;
+  }
+  #nav_pc {
+    display: block;
+  }
+  #nav_pc ul {
+    display: flex;
+		font-family: "Secular One", sans-serif;
+    font-size: 24px;
+  }
+
+  #nav_pc li {
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+
+  #nav_pc li a {
+    padding: 10px 12px 8px 12px;
+  }
+
+  #nav_pc li a:hover {
+    border-bottom: 2px solid #a87570;
+  }
+
+  #nav_pc .reserve a {
+    background-color: #a87570;
+    color: #fff;
+    padding-bottom: 10px;
+  }
+
+  #nav_pc .reserve a:hover {
+    border-bottom: none;
+  }
+  /* ▲ headerここまで ▲ */
+
+  /* ▼ #mainここから ▼ */
+  #main_img_pc {
+    display: block;
+    height: 540px;
+    position: absolute;
+    top: 90px;
+    left: 240px;
+  }
+  #main_img {
+    display: none;
+  }
+  /* ▼ #conceptここから ▼ */
+  #concept {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #concept .concept_inner {
+    width: 590px;
+    position: relative;
+  }
+
+  #concept h2 {
+    padding-bottom: 70px;
+  }
+  #concept .concept_inner::after {
+    content: "";
+    display: block;
+    width: 780px;
+    height: 120px;
+    background: #eae4de;
+    position: absolute;
+    top: 440px;
+    z-index: 1;
+  }
+
+  #concept .concept_img {
+    height: 500px;
+    width: 380px;
+    margin: 0px;
+    position: relative;
+    z-index: 10;
+  }
+  /* ▲ #conceptここまで ▲ */
+
+  /* ▼ #infoここから ▼ */
+  #info .staff_img {
+    background-position: left bottom;
+    position: relative;
+    z-index: 10;
+  }
+
+  #info .info_bg {
+    position: relative;
+  }
+  .info_bg::after {
+    content: "";
+    display: block;
+    width: 780px;
+    height: 120px;
+    background: #eae4de;
+    position: absolute;
+    top: -60px;
+    right: 0px;
+    z-index: 1;
+  }
+  /* ▲ #infoここまで ▲ */
+
+  /* ▼ #menuここから ▼ */
+  #menu .menu_inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /* ▲ #menuここまで ▲ */
+
+  /* ▼ #newsここから ▼ */
+  #news {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  #news .news_inner {
+    width: 600px;
+  }
+
+  #news .news_img {
+    width: 500px;
+    height: 600px;
+  }
+
+  #news dl {
+    text-align: left;
+    padding: 4px 0;
+    display: flex;
+  }
+  #news dt {
+    padding: 4px 1em 5px 0px;
+  }
+
+  #news dd {
+    text-indent: 0;
+    border-bottom: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #news li dd a:hover {
+    border-bottom: 1px dashed #a87570;
+  }
+  /* ▲ #newsここまで ▲ */
+
+  /* ▼ #contactここから ▼ */
+  #contact .contact_inner {
+    width: 700px;
+    padding: 30px 50px 50px 50px;
+    margin: 0 auto;
+  }
+
+  #contact .form_area {
+    width: 600px;
+    background-color: #fff;
+    padding: 50px;
+    position: relative;
+  }
+
+  #contact .submit_txt {
+    font-size: 16px;
+  }
+
+  .submit_btn {
+    padding: 14px 80px;
+    cursor: pointer;
+    border: none;
+  }
+  /* ▲ #contactここまで ▲ */
+
+  /* ▼ footerここから ▼ */
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #footer_logo {
+    width: 270px;
+    height: 120px;
+    margin-top: 40px;
+  }
+  footer .footer_inner {
+    width: 300px;
+  }
+  /* ▲ footerここまで ▲ */
+  /* ▲ #mainここまで ▲ */
+}
